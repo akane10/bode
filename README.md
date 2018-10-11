@@ -2,4 +2,4 @@
 
 ## bode is a twitter bot made with node
 
-[twitter](https://twitter.com/bode_jok)
+[follow bode](https://twitter.com/bode_jok)
