@@ -12,16 +12,18 @@ const T = new Twit({
 });
 
 const options = {
-  url: 'https://geek-jokes.sameerkumar.website/api',
+  url: 'http://api.icndb.com/jokes/random/',
   method: 'GET'
-}
+};
 
 function tweet() {
 	request(options, (err, response, body) => {
-		if (err) throw err
-		const joke = body.replace(/&quot;/g,'"');
+		if (err) throw err;
+		const data = JSON.parse(body).value.joke;
+		const joke = data.replace(/&quot;/g,'"');
 		const characters = joke.length;
 		if (characters > 280) return tweet();
+		console.log(joke);
 		T.post('statuses/update', { status: joke }, function(err, data, response) {
 			console.log('done');
 		});
