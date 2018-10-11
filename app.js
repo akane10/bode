@@ -1,5 +1,4 @@
 const Twit = require('twit');
-const fs = require('fs');
 const request = require('request');
 
 const key = require('./keys.js');
@@ -23,7 +22,6 @@ function tweet() {
 		const joke = data.replace(/&quot;/g,'"');
 		const characters = joke.length;
 		if (characters > 280) return tweet();
-		console.log(joke);
 		T.post('statuses/update', { status: joke }, function(err, data, response) {
 			console.log('done');
 		});
