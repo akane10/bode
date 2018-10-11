@@ -18,6 +18,7 @@ const options = {
 
 function tweet() {
 	request(options, (err, response, body) => {
+		if (err) throw err
 		const joke = body.replace(/&quot;/g,'"');
 		const characters = joke.length;
 		if (characters > 280) return tweet();
@@ -27,4 +28,4 @@ function tweet() {
 	});
 }
 
-setInterval(tweet, 1500);
+setInterval(tweet, 28800000); //8 hours
