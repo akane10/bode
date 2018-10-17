@@ -11,18 +11,15 @@ const T = new Twit({
 });
 
 const options = {
-  url: 'http://api.icndb.com/jokes/random/',
+  url: 'https://catfact.ninja/fact?max_length=280',
   method: 'GET'
 };
 
 function tweet() {
 	request(options, (err, response, body) => {
 		if (err) throw err;
-		const data = JSON.parse(body).value.joke;
-		const joke = data.replace(/&quot;/g,'"');
-		const characters = joke.length;
-		if (characters > 280) return tweet();
-		T.post('statuses/update', { status: joke }, function(err, data, response) {
+		const obj = JSON.parse(body);
+		T.post('statuses/update', { status: obj.fact }, function(err, data, response) {
 			console.log('done');
 		});
 	});
