@@ -7,13 +7,16 @@ const options = {
 };
 
 const catFact = () => {
-	request(options, (err, response, body) => {
+	request(options, (err, res, body) => {
 		if (err) throw err;
 		const obj = JSON.parse(body);
-		T.post('statuses/update', { status: `${obj.fact} #catFact` }, function(err, data, response) {
+
+		T.post('statuses/update', { status: `${obj.fact} #catFact` }).then((data, res) => {
 			console.log('catFact done');
-		});
+		})
+		.catch(e => console.log(e.message));
+
 	});
-}
+};
 
 module.exports = catFact;
