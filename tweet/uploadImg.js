@@ -6,7 +6,11 @@ const quotes = require('../quotes');
 const getQoute = () => {
 	const totalQuotes = quotes.length;
 	const index = Math.floor(Math.random() * Math.floor(totalQuotes));
-	return quotes[index].qoute
+	const qoute = quotes[index].qoute;
+	const qouteLength = qoute.length;
+	
+	if (qouteLength > 280) return getQoute();
+	return qoute
 };
 
 const uploadimg = () => {
@@ -19,7 +23,7 @@ const uploadimg = () => {
 		T.post('media/upload', { media_data: b64content }).then((data, res) => {
 
 			const mediaIdStr = data.data.media_id_string;
-		  const altText = "Have a nice day.";
+		  const altText = 'Have a nice day.';
 		  const meta_params = { media_id: mediaIdStr, alt_text: { text: altText } };
 
 		  T.post('media/metadata/create', meta_params).then((data, res) => {
@@ -29,7 +33,7 @@ const uploadimg = () => {
 
 				T.post('statuses/update', params).then((data, res) => {
 
-					console.log('getQoute done');
+					console.log('uploadImg done');
       		fs.unlinkSync(filename);
 
 				})
