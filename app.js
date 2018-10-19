@@ -1,5 +1,5 @@
-const uploadImg = require('./uploadImg');
-const catFact = require('./catFacts');
+const uploadImg = require('./tweet/uploadImg');
+const catFact = require('./tweet/catFacts');
 
 function tweet() {
 	const num = Math.floor(Math.random() * Math.floor(2));

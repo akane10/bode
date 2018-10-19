@@ -1,16 +1,19 @@
 const fs = require('fs');
 const request = require('request');
-const T = require('./config');
-const quotes = require('./quotes');
+const T = require('../config');
+const quotes = require('../quotes');
 
 const getQoute = () => {
-	const index = Math.floor(Math.random() * Math.floor(37));
+	const totalQuotes = quotes.length;
+	const index = Math.floor(Math.random() * Math.floor(totalQuotes));
 	return quotes[index].qoute
 };
 
 const uploadimg = () => {
 	const filename = Math.random().toString(36).substring(7);
-	request('https://cataas.com/cat/cute').pipe(fs.createWriteStream(filename)).on('close', () => {
+	const uri = 'https://cataas.com/cat/cute';
+
+	request(uri).pipe(fs.createWriteStream(filename)).on('close', () => {
 		const b64content = fs.readFileSync(filename, { encoding: 'base64' });
 
 		T.post('media/upload', { media_data: b64content }).then((data, res) => {

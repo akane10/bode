@@ -1,5 +1,5 @@
 const request = require('request');
-const T = require('./config');
+const T = require('../config');
 
 const options = {
   url: 'https://catfact.ninja/fact?max_length=270',

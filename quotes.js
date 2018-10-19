@@ -109,5 +109,83 @@ module.exports = [
 	},
 	{
 		qoute : 'You can live each day once. Make it a good one.'
+	},
+	{
+		qoute : 'A new day has started. No matter what you are facing right now this day can be a good day for you if you try your best to overcome your problems. Have a nice day.'
+	},
+	{
+		qoute : 'Every morning when you wake up, you have energy and a fresh mind. Combine these and start your day with a great way. Wish you a very happy day.'
+	},
+	{
+		qoute : 'The Sun has risen. The darkness has disappeared and a new day has started. The bright opportunity is waiting for you. Work hard and grab the opportunity. Have a good day.'
+	},
+	{
+		qoute : 'There is only a thin line between to make our day a nice one or a bad one; it is our attitude that makes our day perfect. So always follow a good attitude and have a nice day!'
+	},
+	{
+		qoute : 'Prayer seeks for wisdom, not simply answers. It looks for courage, not simply help. Seeks for the gift of persistence, not only quick solutions. God bless you.'
+	},
+	{
+		qoute : 'The single finger which wipes out tears during our failure is much better than the 10 fingers which come together to clap for our victory! Wishing You Very Good Day Ahead!'
+	},
+	{
+		qoute : 'A bright new day is knocking at the door, To welcome your day with joys galore. It’s waiting for you with open arms and heart, Give your day a brilliant fresh start.'
+	},
+	{
+		qoute : 'There are two eternities that can really break you down, Yesterday & Tomorrow. One is gone & other doesn’t exist! So live today only. Have a nice day.'
+	},
+	{
+		qoute : 'Have the hope in God and start your day with a positive thinking! The rest will happen automatically for you! Have a nice day!'
+	},
+	{
+		qoute : 'How do you feel when you sip a hot tasty coffee in the morning? Very good huh? I am wishing you the same feeling you get all over the day.'
+	},
+	{
+		qoute : 'Without sugar, candy is a waste. Without coffee, morning is waste. And without my message your day is waste. Have a great day.'
+	},
+	{
+		qoute : 'In the morning you feel tired, sleepy and annoyed. But after reading my message you will feel fresh, active and happy. Have a nice day dear.'
+	},
+	{
+		qoute : 'If you are at work and having a hard day, think that you have a cool friend who sends you a good day message every day. Have a very wonderful day!'
+	},
+	{
+		qoute : 'I know it feels bad that you have to wake up early in the morning. But I am wishing you to have a good day. Go to work and enjoy the day.'
+	},
+	{
+		qoute : 'Each new day is meant to be better than the day that went by. Go ahead, kick some ass today my Ninja! You’ll be fine!'
+	},
+	{
+		qoute : 'Whatever happens to your day just relax and manage to make a smile. Life is not a problem to be solved but a gift to be enjoyed. Make Everyday your best day!'
+	},
+	{
+		qoute : 'Even the more complex goals can make it happen if every day we strive for them. The key to success is perseverance, enjoy the most of this day.'
+	},
+	{
+		qoute : 'Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do.'
+	},
+	{
+		qoute : 'Opportunity comes to those who quit Waiting and start Looking. Success comes to those who quit Thinking and Start Doing. Best of luck for Looking and Doing.'
+	},
+	{
+		qoute : 'The things that cost us more work effort to get them are those that give us greater satisfaction, surrender is not an option to keep on with much spirit.'
+	},
+	{
+		qoute : 'Opportunity is missed by most people because it is dressed in overalls and looks like work. So, make it happen and give your best!'
+	},
+	{
+		qoute : 'I wish you all the best in this new day, especially in your office, I hope you do very well each of your duties at work, I wish you all the luck in the world.'
+	},
+	{
+		qoute : 'I know you are the best at what you do and that today will be a great day for you, I wish you well in all your work duties.'
+	},
+	{
+		qoute : 'Within you is the power to rise above any situation or struggle, and transform into the brightest, strongest version of you ever.'
+	},
+	{
+		qoute : 'If you keep striving each day you will see that in a while you will see some of your dreams fulfilled, I hope everything goes well in your work center, and may it be a very productive day for you.'
+	},
+	{
+		qoute : 'This new day you have the opportunity to do different things, if you do not feel good about your life then dare to make some changes.'
 	}
 ]
