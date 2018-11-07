@@ -2,6 +2,7 @@ const fs = require('fs');
 const request = require('request');
 const T = require('../config');
 const quotes = require('../quotes');
+const app = require('../app');
 
 const getQoute = () => {
 	const totalQuotes = quotes.length;
@@ -37,11 +38,20 @@ const uploadimg = () => {
       		fs.unlinkSync(filename);
 
 				})
-				.catch(e => console.log('upload :', e.message));	      
+				.catch(e => {
+					console.log('upload :', e.message);
+					return app();
+				});
 		  })
-		  .catch(e => console.log('metadata :', e.message));
+		  .catch(e => {
+		  	console.log('metadata :', e.message);
+		  	return app();
+		  });
 		})
-		.catch(e => console.log('post :', e.message));
+		.catch(e => {
+			console.log('post :', e.message);
+			return app();
+		});
 	});
 };
 

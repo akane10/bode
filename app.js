@@ -7,4 +7,6 @@ function tweet() {
 	return uploadImg();
 };
 
-setInterval(tweet, 28800000); //8 hours
+setInterval(tweet, 46800000); //13 hours
+
+module.exports = tweet;
