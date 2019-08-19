@@ -1,4 +1,5 @@
-const request = require('request');
+// const request = require('request');
+const rp = require('request-promise');
 const T = require('../config');
 const app = require('../app');
 
@@ -7,23 +8,17 @@ const options = {
   method: 'GET'
 };
 
-const catFact = () => {
-  request(options, (err, res, body) => {
-    if (err) {
-      console.log(err);
-      return app();
-    }
-    const obj = JSON.parse(body);
+async function catFact() {
+  try {
+    const res = await rp(options);
+    const obj = JSON.parse(res);
 
-    T.post('statuses/update', { status: `${obj.fact} #catFact #cat` })
-      .then((data, res) => {
-        console.log('catFact done');
-      })
-      .catch(e => {
-        console.log(e.message);
-        return app();
-      });
-  });
-};
+    await T.post('statuses/update', { status: `${obj.fact} #catFact #cat` });
+    console.log('catFact done');
+  } catch (e) {
+    console.log(e);
+    return app();
+  }
+}
 
 module.exports = catFact;
