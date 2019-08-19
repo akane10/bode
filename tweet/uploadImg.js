@@ -22,42 +22,30 @@ const uploadimg = () => {
 
   request(uri)
     .pipe(fs.createWriteStream(filename))
-    .on('close', () => {
-      const b64content = fs.readFileSync(filename, { encoding: 'base64' });
+    .on('close', async () => {
+      try {
+        const b64content = fs.readFileSync(filename, { encoding: 'base64' });
+        const data = await T.post('media/upload', { media_data: b64content });
 
-      T.post('media/upload', { media_data: b64content })
-        .then((data, res) => {
-          const mediaIdStr = data.data.media_id_string;
-          const altText = 'Have a nice day.';
-          const meta_params = {
-            media_id: mediaIdStr,
-            alt_text: { text: altText }
-          };
+        const mediaIdStr = data.data.media_id_string;
+        const altText = 'Have a nice day.';
+        const meta_params = {
+          media_id: mediaIdStr,
+          alt_text: { text: altText }
+        };
 
-          T.post('media/metadata/create', meta_params)
-            .then((data, res) => {
-              const status = getQoute();
-              const params = { status: status, media_ids: [mediaIdStr] };
+        await T.post('media/metadata/create', meta_params);
 
-              T.post('statuses/update', params)
-                .then((data, res) => {
-                  console.log('uploadImg done');
-                  fs.unlinkSync(filename);
-                })
-                .catch(e => {
-                  console.log('upload :', e.message);
-                  return app();
-                });
-            })
-            .catch(e => {
-              console.log('metadata :', e.message);
-              return app();
-            });
-        })
-        .catch(e => {
-          console.log('post :', e.message);
-          return app();
-        });
+        const status = getQoute();
+        const params = { status: status, media_ids: [mediaIdStr] };
+
+        await T.post('statuses/update', params);
+        console.log('uploadImg done');
+        fs.unlinkSync(filename);
+      } catch (e) {
+        console.log(e);
+        return app();
+      }
     });
 };
 
