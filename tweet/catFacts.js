@@ -8,22 +8,22 @@ const options = {
 };
 
 const catFact = () => {
-	request(options, (err, res, body) => {
-		if (err) {
-			console.log(err);
-			return app();
-		}
-		const obj = JSON.parse(body);
+  request(options, (err, res, body) => {
+    if (err) {
+      console.log(err);
+      return app();
+    }
+    const obj = JSON.parse(body);
 
-		T.post('statuses/update', { status: `${obj.fact} #catFact #cat` }).then((data, res) => {
-			console.log('catFact done');
-		})
-		.catch(e => {
-			console.log(e.message);
-			return app();
-		});
-
-	});
+    T.post('statuses/update', { status: `${obj.fact} #catFact #cat` })
+      .then((data, res) => {
+        console.log('catFact done');
+      })
+      .catch(e => {
+        console.log(e.message);
+        return app();
+      });
+  });
 };
 
 module.exports = catFact;
